@@ -2,3 +2,9 @@
     border-radius: 5px;
     width: 500px;
 }
+
+.background_img{
+    background-image: url('../images/esports1.png');
+    height: 100%;
+
+}

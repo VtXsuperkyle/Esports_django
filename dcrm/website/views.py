@@ -49,6 +49,5 @@ def user_logout(request):
     return redirect("my-login")
 
 #dashboard
-@login_required(login_url='my-login')
 def dashboard(request):
     return render(request, 'website/dashboard.html')
