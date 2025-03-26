@@ -37,17 +37,17 @@ def my_login(request):
 
             if user is not None:
                 auth.login(request, user)
-                return redirect('dashboard')
+                return redirect('infopage')
 
     context = {'login_form':form}
     return render(request,'website/my-login.html', context=context)
 
 
 #logout user
-def user_logout(request):
+def logout(request):
     auth.logout(request)
-    return redirect("my-login")
+    return render(request,'website/logout.html')
 
 #dashboard
-def dashboard(request):
-    return render(request, 'website/dashboard.html')
+def infopage(request):
+    return render(request, 'website/infopage.html')

@@ -3,8 +3,6 @@
     width: 500px;
 }
 
-.background_img{
-    background-image: url('../images/esports1.png');
-    height: 100%;
-
+.errorlist{
+    color: red;
 }
