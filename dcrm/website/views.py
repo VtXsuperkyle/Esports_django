@@ -51,3 +51,7 @@ def logout(request):
 #dashboard
 def infopage(request):
     return render(request, 'website/infopage.html')
+
+#account
+def account(request):
+    return render(request, 'website/account.html')
