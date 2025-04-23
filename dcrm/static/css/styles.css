@@ -6,3 +6,15 @@
 .errorlist{
     color: red;
 }
+.carousel-caption {
+    background-color: rgba(205, 205, 205, 0.258); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 15px;
+    border-radius: 5px; /* Optional */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: rgb(255, 255, 255); /* Adjust text color for the light background */
+}
