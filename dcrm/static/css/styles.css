@@ -18,3 +18,9 @@
 .carousel-caption p {
     color: rgb(255, 255, 255); /* Adjust text color for the light background */
 }
+/* Adjusting carousel image size */
+.carousel-item img {
+    max-height: 600px; /* Adjust this value as needed */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
