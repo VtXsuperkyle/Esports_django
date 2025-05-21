@@ -24,3 +24,10 @@
     width: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure the image covers the area without distortion */
   }
+
+.constrained-text {
+    max-width: 700px; /* Keep your desired maximum width */
+    margin-left: 0;      /* Explicitly align to the left */
+    margin-right: auto;  /* Allow the right margin to expand and push it left */
+    text-align: left;    /* Text inside is left-aligned */
+}
