@@ -1,88 +1,181 @@
 {% extends 'website/base.html' %}
+
 {% load static %}
 
+
+
 {% block content %}
-    <br>
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'images/DSC01010.JPG' %}" class="d-block w-100" alt="test1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>The history of esports</h5>
-                    <p>The earliest forms of competitive gaming can be traced back to the 1970s, with events like the 
-                        "Intergalactic Spacewar Olympics" in 1972 at Stanford University. The prize was a year's 
-                        subscription to Rolling Stone magazine. The 21st century marked a significant consolidation 
-                        of esports, with the professionalization of teams, coaches, and training regimens, mirroring 
-                        traditional sports. Platforms like Twitch and YouTube became crucial for broadcasting and fan engagement.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'images/DSC06271.jpg' %}" class="d-block w-100" alt="test2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>What do we have to offer?</h5>
-                    <p>We have an entry level 1 course, which will go over the basics of the esports world. We also have a higher version of 
-                        the entry level course, this is the mid range course of level 2. Then there is a level 3, this will be the highest 
-                        level esports course you can do, as the other two higher courses after this one will require having the level 3. The 
-                        higher eduaction courses which are the level 4/5 require having a level 3, these will get you a hnc and a hnd respectively.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'images/DSC06301.jpg' %}" class="d-block w-100" alt="test3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Where can Esports take you?</h5>
-                    <p>Broadcast Journalist
-                        Average salary - £23,000 to £42,000 Broadcast journalists research and present the news on TV, radio and the internet.
-                        Day to day tasks: Research stories, follow leads or develop ideas, prepare and conduct live and pre-recorded interviews, 
-                        present in a TV or radio studio or on location, record voiceovers for recorded material, ask questions at briefings and 
-                        press conferences, direct a small camera or sound crew or operate equipment yourself. Working environments: You could 
-                        work at a TV studio, from home, in an office or at a film studio. Your working environment may be you’ll travel often 
-                        and outdoors in all weathers.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <br>
-    <h2>Here are some games that are played at esports levels:</h2>
-    <hr>
-    <div style="display: flex; flex-direction: row;">
-        <div class="card" style="width: 400px; margin-right: 20px;">
-          <img class="card-img-top" src="static/images/Rocket_League_coverart.jpg" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">Rocket League</h4>
-            <p class="card-text">Rocket League esports is a professional competitive scene where highly 
-                skilled teams and players compete in the vehicular soccer game for significant prizes</p>
-          </div>
-        </div>
-        <div class="card" style="width: 400px; margin-right: 20px;">
-          <img class="card-img-top" src="static/images/league-of-legends-logo.jpg" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">League of Legends</h4>
-            <p class="card-text">League of Legends esports is a global professional scene where teams of five skilled players strategically 
-                compete in the multiplayer online battle arena to destroy the opposing team's Nexus for significant recognition and prizes 
-                in organized leagues and the annual World Championship.</p>
-          </div>
-        </div>
-        <div class="card" style="width: 400px;">
-            <img class="card-img-top" src="static/images/valorant-logo.png" alt="Card image">
-            <div class="card-body">
-              <h4 class="card-title">Valorant</h4>
-              <p class="card-text">Valorant esports is a rapidly growing global competitive scene for Riot Games' tactical first-person 
-                shooter, featuring teams of five agents with unique abilities battling for dominance in a round-based objective mode across 
-                structured international leagues and major tournaments like Champions.</p>
-            </div>
-          </div>
-    </div>
+
+    <br>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <img src="{% static 'images/DSC01010.JPG' %}" class="d-block w-100" alt="test1">
+
+                <div class="carousel-caption d-none d-md-block">
+
+                    <h5>The history of esports</h5>
+
+                    <p>The earliest forms of competitive gaming can be traced back to the 1970s, with events like the
+
+                        "Intergalactic Spacewar Olympics" in 1972 at Stanford University. The prize was a year's
+
+                        subscription to Rolling Stone magazine. The 21st century marked a significant consolidation
+
+                        of esports, with the professionalization of teams, coaches, and training regimens, mirroring
+
+                        traditional sports. Platforms like Twitch and YouTube became crucial for broadcasting and fan engagement.</p>
+
+                </div>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="{% static 'images/DSC06271.jpg' %}" class="d-block w-100" alt="test2">
+
+                <div class="carousel-caption d-none d-md-block">
+
+                    <h5>What do we have to offer?</h5>
+
+                    <p>We have an entry level 1 course, which will go over the basics of the esports world. We also have a higher version of
+
+                        the entry level course, this is the mid range course of level 2. Then there is a level 3, this will be the highest
+
+                        level esports course you can do, as the other two higher courses after this one will require having the level 3. The
+
+                        higher eduaction courses which are the level 4/5 require having a level 3, these will get you a hnc and a hnd respectively.</p>
+
+                </div>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="{% static 'images/DSC06301.jpg' %}" class="d-block w-100" alt="test3">
+
+                <div class="carousel-caption d-none d-md-block">
+
+                    <h5>Where can Esports take you?</h5>
+
+                    <p>Broadcast Journalist
+
+                        Average salary - £23,000 to £42,000 Broadcast journalists research and present the news on TV, radio and the internet.
+
+                        Day to day tasks: Research stories, follow leads or develop ideas, prepare and conduct live and pre-recorded interviews,
+
+                        present in a TV or radio studio or on location, record voiceovers for recorded material, ask questions at briefings and
+
+                        press conferences, direct a small camera or sound crew or operate equipment yourself. Working environments: You could
+
+                        work at a TV studio, from home, in an office or at a film studio. Your working environment may be you’ll travel often
+
+                        and outdoors in all weathers.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">Previous</span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">Next</span>
+
+        </button>
+
+    </div>
+
+    <br>
+
+    <h2>Here are some games that are played at esports levels:</h2>
+
+    <hr>
+
+    <div style="display: flex; flex-direction: row;">
+
+        <div class="card" style="width: 400px; ">
+
+          <img class="card-img-top" src="static/images/Rocket_League_coverart.jpg" alt="Card image">
+
+          <div class="card-body">
+
+            <h4 class="card-title">Rocket League</h4>
+
+            <p class="card-text">Rocket League esports is a professional competitive scene where highly skilled teams and players compete in the vehicular soccer game for significant prizes</p>
+
+          </div>
+
+        </div>
+
+        <div class="card" style="width: 400px; ">
+
+          <img class="card-img-top" src="static/images/league-of-legends-logo.jpg" alt="Card image">
+
+          <div class="card-body">
+
+            <h4 class="card-title">League of Legends</h4>
+
+            <p class="card-text">League of Legends esports is a global professional scene where teams of five skilled players strategically compete in the multiplayer online battle arena to destroy the opposing team's Nexus for significant recognition and prizes in organized leagues and the annual World Championship.</p>
+
+          </div>
+
+        </div>
+
+        <div class="card" style="width: 400px;">
+
+            <img class="card-img-top" src="static/images/valorant-logo.png" alt="Card image">
+
+            <div class="card-body">
+
+              <h4 class="card-title">Valorant</h4>
+
+              <p class="card-text">Valorant esports is a rapidly growing global competitive scene for Riot Games' tactical first-person shooter, featuring teams of five agents with unique abilities battling for dominance in a round-based objective mode across structured international leagues and major tournaments like Champions.</p>
+
+            </div>
+
+        </div>
+
+         <div class="card" style="width: 400px;">
+
+            <img class="card-img-top" src="static/images/dota_2_logo.jpg" alt="Card image">
+
+            <div class="card-body">
+
+              <h4 class="card-title">Dota 2</h4>
+
+              <p class="card-text">Dota 2 esports is a highly competitive global scene centered around Valve's strategic 5v5 MOBA, culminating annually in The International, a premier tournament renowned for its massive, crowdfunded prize pools.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
 {% endblock %}
