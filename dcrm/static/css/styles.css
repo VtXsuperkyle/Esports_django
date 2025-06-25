@@ -1,3 +1,165 @@
+/* --- Global Resets for Full-Page Layouts --- */
+/*
+ * IMPORTANT: These rules target the entire page's base elements.
+ * They remove default browser margins/padding that create whitespace
+ * around your content.
+ */
+html, body {
+    height: 100%; /* Ensures they take up the full viewport height */
+    width: 100%;  /* Ensures they take up the full viewport width */
+    margin: 0;    /* REMOVES DEFAULT BROWSER MARGINS (primary culprit for page whitespace) */
+    padding: 0;   /* REMOVES DEFAULT BROWSER PADDING */
+    overflow-x: hidden; /* Prevents horizontal scrollbars if content slightly overflows */
+    box-sizing: border-box; /* Ensures padding/borders are included in element's total width/height */
+}
+
+/* --- Carousel Styling for Almost Full-Screen --- */
+#myCarousel {
+    /* Set height relative to viewport */
+    height: 90vh; /* 90% of the viewport height for "almost full screen" */
+    /* Add a fallback min-height for very short screens if 90vh becomes too small */
+    min-height: 400px; /* Adjust as needed, e.g., 500px, 600px */
+
+    overflow: hidden; /* Crucial to prevent content overflow from causing scrollbars within the carousel */
+
+    /* Ensure no external margins/padding are pushing the carousel itself */
+    margin: 0;    /* Explicitly remove any margins on the carousel container */
+    padding: 0;   /* Explicitly remove any padding on the carousel container */
+    width: 100%; /* Ensure the carousel takes 100% of the body's width */
+}
+
+#myCarousel .carousel-inner,
+#myCarousel .carousel-item {
+    height: 100%; /* Inner elements fill the carousel's height */
+    width: 100%; /* Ensure inner elements also take full width */
+}
+
+#myCarousel .carousel-item img {
+    height: 100%;       /* Image fills the item's height */
+    width: 100%;        /* Image fills the item's width */
+    object-fit: cover;  /* Scales and crops image to cover the container */
+    object-position: center; /* Ensures the center of the image is prioritized when cropping */
+}
+
+/* --- Carousel Caption Styling --- */
+.carousel-caption {
+    background-color: rgba(205, 205, 205, 0.258); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 15px;
+    border-radius: 5px; /* Optional */
+    bottom: 20px; /* Keep it off the very bottom edge */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center */
+    max-width: 80%; /* Limit width for better readability on wide screens */
+    /* Ensure the caption itself doesn't have unwanted margins */
+    margin: 0;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: rgb(255, 255, 255); /* Adjust text color for the light background */
+}
+
+/* --- Responsive Adjustments for Carousel Height --- */
+@media (max-width: 768px) {
+    #myCarousel {
+        height: 60vh; /* Shorter on small screens for better UX */
+        min-height: 300px; /* Ensure a minimum height for small screens too */
+    }
+}
+
+/* --- SCROLL DOWN INDICATOR STYLES --- */
+/* --- SCROLL DOWN INDICATOR STYLES --- */
+/* --- SCROLL DOWN INDICATOR STYLES --- */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    right: 30px; /* Stays on the right */
+    left: auto;
+    transform: none;
+    z-index: 10; /* Or 9999 if you kept it high */
+    text-align: center;
+}
+
+.scroll-down-indicator a {
+    display: inline-block;
+    width: 80px;  /* Circle width */
+    height: 80px; /* Circle height */
+    border: 4px solid red; /* Border thickness */
+    border-radius: 50%;
+    position: relative; /* Essential for absolute positioning of spans */
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.scroll-down-indicator a:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Arrow inside the circle */
+.scroll-down-indicator a span {
+    display: block;
+    width: 25px; /* Arrow width - keeping this for good proportion within 80px */
+    height: 25px; /* Arrow height */
+    border-right: 4px solid red;
+    border-bottom: 4px solid red;
+    transform: rotate(45deg);
+    position: absolute; /* Essential to move it within the 'a' element */
+    left: 50%;
+    top: 50%;
+    /* THESE ARE THE CRITICAL ADJUSTMENTS: */
+    margin-left: -12.5px; /* Half of the arrow's width (25px / 2 = 12.5px) */
+    margin-top: -20px;   /* Adjusted for vertical placement within the 80px circle - FINE-TUNE THIS! */
+}
+
+
+/* Animation Keyframes - no change needed here */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* Responsive adjustment for the indicator */
+@media (max-width: 768px) {
+    .scroll-down-indicator {
+        bottom: 20px;
+        right: 20px;
+    }
+    .scroll-down-indicator a {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+    .scroll-down-indicator a span {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+        margin-left: -8px; /* Half of 16px */
+        margin-top: -12px; /* Adjusted for mobile size */
+    }
+    .scroll-down-indicator a span:nth-child(2) {
+        margin-top: -22px;
+    }
+    .scroll-down-indicator a span:nth-child(3) {
+        margin-top: -32px;
+    }
+}
+/* --- END SCROLL DOWN INDICATOR STYLES --- */
+
+/* ... rest of your styles ... */
+/* --- END SCROLL DOWN INDICATOR STYLES --- */
+
+
+/* --- Other Styles (from your original style.css) --- */
 .form-layout{
     border-radius: 5px;
     width: 500px;
@@ -6,77 +168,50 @@
 .errorlist{
     color: red;
 }
-.carousel-caption {
-    background-color: rgba(205, 205, 205, 0.258); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Apply the blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-    padding: 15px;
-    border-radius: 5px; /* Optional */
-}
-
-.carousel-caption h5,
-.carousel-caption p {
-    color: rgb(255, 255, 255); /* Adjust text color for the light background */
-}
-/* Adjusting carousel image size */
-.carousel-item img {
-    max-height: 600px; /* Adjust this value as needed */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-  }
 
 .constrained-text {
-    max-width: 700px; /* Keep your desired maximum width */
-    margin-left: 0;      /* Explicitly align to the left */
-    margin-right: auto;  /* Allow the right margin to expand and push it left */
-    text-align: left;    /* Text inside is left-aligned */
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
 }
 
-
-
-
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* Flip Card Styles */
 .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+    background-color: #bbb;
+    color: black;
 }
 
-/* Style the back side */
 .flip-card-back {
-  background-color: rgb(50, 50, 50);
-  color: white;
-  transform: rotateY(180deg);
+    background-color: rgb(50, 50, 50);
+    color: white;
+    transform: rotateY(180deg);
 }
